@@ -4,33 +4,353 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>web design</title> 
-    <link rel="stylesheet" href="style.css"> 
+    <title>Architecture Design - Premium Designs</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+    <!-- Header -->
     <header>
-        <div class="logo"><img src="./images.png" alt=""></div>
+        <div class="logo">
+            <svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                
+                <!-- Background Circle -->
+                <circle cx="25" cy="30" r="22" fill="url(#logoGradient)" opacity="0.1"/>
+                
+                <!-- Building Shape -->
+                <g transform="translate(12, 8)">
+                    <!-- Roof Triangle -->
+                    <polygon points="8,0 16,8 0,8" fill="#0066cc"/>
+                    
+                    <!-- Main Building -->
+                    <rect x="2" y="8" width="12" height="20" fill="#764ba2" rx="1"/>
+                    
+                    <!-- Windows Grid -->
+                    <rect x="4" y="10" width="2.5" height="2.5" fill="#ffffff"/>
+                    <rect x="8" y="10" width="2.5" height="2.5" fill="#ffffff"/>
+                    <rect x="12" y="10" width="2" height="2.5" fill="#ffffff"/>
+                    
+                    <rect x="4" y="15" width="2.5" height="2.5" fill="#0066cc"/>
+                    <rect x="8" y="15" width="2.5" height="2.5" fill="#0066cc"/>
+                    <rect x="12" y="15" width="2" height="2.5" fill="#0066cc"/>
+                    
+                    <rect x="4" y="20" width="2.5" height="2.5" fill="#ffffff"/>
+                    <rect x="8" y="20" width="2.5" height="2.5" fill="#ffffff"/>
+                    <rect x="12" y="20" width="2" height="2.5" fill="#ffffff"/>
+                    
+                    <!-- Door -->
+                    <rect x="7" y="26" width="3" height="4" fill="#0066cc" rx="0.5"/>
+                </g>
+                
+                <!-- Decorative Elements -->
+                <circle cx="150" cy="20" r="3" fill="#0066cc" opacity="0.6"/>
+                <circle cx="165" cy="35" r="2.5" fill="#764ba2" opacity="0.6"/>
+                
+                <!-- Text -->
+                <text x="52" y="25" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#0066cc" letter-spacing="0.5">
+                    ARCH
+                </text>
+                <text x="52" y="42" font-family="Georgia, serif" font-size="10" fill="#764ba2" letter-spacing="0.3">
+                    DESIGN STUDIO
+                </text>
+            </svg>
+        </div>
         <div class="menu">
             <ul>
-                <li><a href="#"></a>home</li>
-                <li><a href="#"></a>explore</li>
-                <li><a href="#"></a>shop</li>
-                <li><a href="#"></a>about us</li>
+                <li><a href="#home">home</a></li>
+                <li><a href="#explore">explore</a></li>
+                <li><a href="#shop">shop</a></li>
+                <li><a href="#about">about us</a></li>
             </ul>
         </div>
         <div class="search-bar">
             <p>search</p>
-            <input type="text" name="" id="">
+            <input type="text" name="search" id="search" placeholder="Search designs...">
             <div class="search-icon">
                 <i class="fa-solid fa-magnifying-glass"></i>
-
             </div>
         </div>
     </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Modern Architecture Design</h1>
+            <p>Discover stunning architectural designs and innovative solutions</p>
+            <button class="btn btn-primary">Explore Now</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&h=500&fit=crop" alt="Modern Architecture" class="hero-img">
+        </div>
+    </section>
+
+    <!-- Explore Section -->
+    <section id="explore" class="explore" style="background-image: url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&h=800&fit=crop');">
+        <div class="explore-overlay"></div>
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=300&fit=crop" alt="Modern Office" class="project-img">
+                    <div class="overlay">
+                        <button class="view-btn" onclick="openModal('modern-office')">View Details</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Modern Office</h3>
+                    <p>Contemporary workspace design with natural lighting</p>
+                    <a href="#" class="card-link" onclick="openModal('modern-office'); return false;">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop" alt="Luxury Residence" class="project-img">
+                    <div class="overlay">
+                        <button class="view-btn" onclick="openModal('luxury-residence')">View Details</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Luxury Residence</h3>
+                    <p>Elegant home design with premium finishes</p>
+                    <a href="#" class="card-link" onclick="openModal('luxury-residence'); return false;">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&h=300&fit=crop" alt="Commercial Complex" class="project-img">
+                    <div class="overlay">
+                        <button class="view-btn" onclick="openModal('commercial-complex')">View Details</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Commercial Complex</h3>
+                    <p>Multi-purpose building with innovative architecture</p>
+                    <a href="#" class="card-link" onclick="openModal('commercial-complex'); return false;">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=400&h=300&fit=crop" alt="Resort & Spa" class="project-img">
+                    <div class="overlay">
+                        <button class="view-btn" onclick="openModal('resort-spa')">View Details</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Resort & Spa</h3>
+                    <p>Luxury resort with stunning landscape integration</p>
+                    <a href="#" class="card-link" onclick="openModal('resort-spa'); return false;">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=300&fit=crop" alt="Retail Space" class="project-img">
+                    <div class="overlay">
+                        <button class="view-btn" onclick="openModal('retail-space')">View Details</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Retail Space</h3>
+                    <p>Modern shopping mall with interactive design</p>
+                    <a href="#" class="card-link" onclick="openModal('retail-space'); return false;">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Educational Hub" class="project-img">
+                    <div class="overlay">
+                        <button class="view-btn" onclick="openModal('educational-hub')">View Details</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3>Educational Hub</h3>
+                    <p>State-of-the-art learning facility design</p>
+                    <a href="#" class="card-link" onclick="openModal('educational-hub'); return false;">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Project Details -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Project Image" class="modal-image">
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <div class="modal-details">
+                        <div class="detail-item">
+                            <h4>Project Duration</h4>
+                            <p id="modalDuration"></p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Budget</h4>
+                            <p id="modalBudget"></p>
+                        </div>
+                        <div class="detail-item">
+                            <h4>Status</h4>
+                            <p id="modalStatus"></p>
+                        </div>
+                    </div>
+                    <p id="modalFullDescription"></p>
+                    <button class="btn btn-primary" onclick="contactProject()">Contact for More Info</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop');">
+        <div class="shop-overlay"></div>
+        <h2>Design Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop" alt="Concept Design" class="service-img">
+                </div>
+                <div class="service-icon">
+                    <i class="fa-solid fa-pencil"></i>
+                </div>
+                <h3>Concept Design</h3>
+                <p class="price">$500 - $2000</p>
+                <button class="btn btn-secondary">Add to Cart</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop" alt="Detailed Plans" class="service-img">
+                </div>
+                <div class="service-icon">
+                    <i class="fa-solid fa-ruler"></i>
+                </div>
+                <h3>Detailed Plans</h3>
+                <p class="price">$2000 - $5000</p>
+                <button class="btn btn-secondary">Add to Cart</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="3D Rendering" class="service-img">
+                </div>
+                <div class="service-icon">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+                <h3>3D Rendering</h3>
+                <p class="price">$1000 - $3000</p>
+                <button class="btn btn-secondary">Add to Cart</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop" alt="Site Visualization" class="service-img">
+                </div>
+                <div class="service-icon">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <h3>Site Visualization</h3>
+                <p class="price">$3000 - $7000</p>
+                <button class="btn btn-secondary">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about" style="background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&h=800&fit=crop');">
+        <div class="about-overlay"></div>
+        <div class="about-wrapper">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&h=500&fit=crop" alt="About Us" class="about-img">
+            </div>
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>We are a team of experienced architects and designers dedicated to creating innovative and sustainable architectural solutions. With over 20 years of experience, we've completed hundreds of projects across residential, commercial, and industrial sectors.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h4>500+</h4>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat">
+                        <h4>50+</h4>
+                        <p>Team Members</p>
+                    </div>
+                    <div class="stat">
+                        <h4>20+</h4>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#explore">Projects</a></li>
+                    <li><a href="#shop">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Residential Design</a></li>
+                    <li><a href="#">Commercial Design</a></li>
+                    <li><a href="#">Urban Planning</a></li>
+                    <li><a href="#">Consultation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>
+                    <i class="fa-solid fa-envelope"></i> <a href="mailto:ekidormike18@gmail.com">ekidormike18@gmail.com</a>
+                </p>
+                <p>
+                    <i class="fa-solid fa-phone"></i> <a href="tel:+254713533740">+254 713 533 740</a>
+                </p>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i> Mwangaza Primary, Isiolo, Kenya
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Architecture Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
